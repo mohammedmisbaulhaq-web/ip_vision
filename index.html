@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#142420" />
+    <meta name="description" content="ipVision — High-precision IP geolocation, autonomous system routing, and proxy detection scanner." />
+    <title>ipVision — Network Signal &amp; Security Scanner</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/mark.svg" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script src="/src/app.js" defer></script>
+  </head>
+  <body>
+    <!-- Step 3: Intro Animation Overlay -->
+    <div id="intro-overlay" class="intro-overlay" role="dialog" aria-modal="true" aria-label="Welcome Intro">
+      <div class="intro-backdrop"></div>
+      <div class="intro-content">
+        <div class="intro-eyebrow"><span class="intro-pulse"></span> SYSTEM INITIALIZATION // SEC.SCAN</div>
+        <h1 id="intro-headline" class="intro-headline">
+          <!-- Text: IP Address Geolocation and Security Scanner (Generated letter-by-letter) -->
+          <span class="neon-word" data-word="IP Address"></span>
+          <span class="neon-word" data-word="Geolocation and"></span>
+          <span class="neon-word" data-word="Security Scanner"></span>
+        </h1>
+        <div class="intro-tube-track" aria-hidden="true">
+          <div class="neon-tube-sweep"></div>
+        </div>
+      </div>
+      <button id="skip-intro-btn" class="skip-intro-btn" type="button" aria-label="Skip introduction animation">
+        <span>Skip intro</span>
+        <kbd>Esc</kbd>
+      </button>
+    </div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="site-shell">
+      <!-- Header -->
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="ipVision home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M20 4.5v7.2M20 28.3v7.2M4.5 20h7.2M28.3 20h7.2" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="20" cy="20" r="14.2" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="20" cy="20" r="7.4" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="20" cy="20" r="2.4" fill="currentColor" />
+              <path d="m20 20 8.1-8.1" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="28.2" cy="11.8" r="2.3" fill="#f26a4b" stroke="#f5f3eb" stroke-width="1.1" />
+            </svg>
+          </span>
+          <span class="brand-wordmark"><span>ip</span><span class="brand-accent">Vision</span></span>
+        </a>
+
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="#scanner">Scanner</a>
+          <a href="#telemetry">Telemetry</a>
+          <a href="#how-it-works">Protocol</a>
+          <a href="#feedback">Feedback</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <label class="privacy-switch" for="clean-view" title="Toggle Privacy Mode">
+            <input id="clean-view" type="checkbox" checked />
+            <span class="switch-visual" aria-hidden="true"><span></span></span>
+            <span>Clean View</span>
+          </label>
+
+          <!-- Auth Bar Widget -->
+          <div id="auth-actions" class="auth-actions">
+            <button id="auth-open-btn" class="auth-btn" type="button">
+              <span class="auth-dot"></span>
+              <span id="auth-btn-label">Sign In</span>
+            </button>
+            <div id="user-menu" class="user-menu" hidden>
+              <button id="history-open-btn" class="icon-btn" type="button" title="View Scan History">
+                <span class="history-icon">◷</span> History
+              </button>
+              <button id="logout-btn" class="logout-btn" type="button" title="Log Out">
+                Exit
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> NET.INTEL <span class="eyebrow-divider">/</span> VERIFIED IP SCANNER</div>
+            <h1 id="hero-title">Find the signal.<br /><em>Skip the noise.</em></h1>
+            <p class="hero-description">A clear read on the network behind any IP. Approximate geolocation, carrier routing, and security threat signals in one unified radar.</p>
+            <div class="hero-cta-row">
+              <a class="text-link" href="#scanner">Inspect a network <span aria-hidden="true">↓</span></a>
+              <span class="hero-badge"><span class="badge-dot"></span> 2.0 RADAR ACTIVE</span>
+            </div>
+          </div>
+
+          <div class="hero-instrument" aria-label="Live scan instrument radar">
+            <div class="instrument-top"><span>RADAR CORE</span><span>ipVision</span></div>
+            <div class="radar-wrap" aria-hidden="true">
+              <div class="radar-grid"></div>
+              <div class="radar-sweep"></div>
+              <span class="radar-center"></span>
+              <span class="radar-point point-one"></span>
+              <span class="radar-point point-two"></span>
+              <span class="radar-cross cross-a">+</span>
+              <span class="radar-cross cross-b">+</span>
+            </div>
+            <div class="instrument-bottom">
+              <span>SECURITY MESH</span>
+              <span id="instrument-status" class="instrument-state"><i></i> READY</span>
+            </div>
+            <div class="instrument-index">NODE 01 <span>◌</span></div>
+          </div>
+        </section>
+
+        <!-- Scanner Section -->
+        <section id="scanner" class="scanner-section" aria-labelledby="scanner-title">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow section-eyebrow">THE LOOKUP DESK <span class="eyebrow-divider">/</span> ENCRYPTED TELEMETRY</div>
+              <h2 id="scanner-title">Start with an address.</h2>
+            </div>
+            <p class="section-note">Secure single-session scan.<br />Instant proxy and hosting verification.</p>
+          </div>
+
+          <!-- Auth Gate Banner (Visible if user is logged out) -->
+          <div id="auth-gate-banner" class="auth-gate-banner">
+            <div class="gate-icon">🔒</div>
+            <div class="gate-text">
+              <strong>Account Required for Scans</strong>
+              <p>Sign in or create a free account to unlock high-resolution IP inspection and saved history.</p>
+            </div>
+            <button id="gate-signin-btn" class="gate-btn" type="button">Sign In / Register</button>
+          </div>
+
+          <form id="scan-form" class="scan-form" novalidate>
+            <label class="ip-field" for="ip-input">
+              <span class="field-prefix" aria-hidden="true">IP<span>://</span></span>
+              <input id="ip-input" name="ip" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Enter IPv4 or IPv6 (or leave blank for your IP)" aria-describedby="input-help scan-status" />
+              <span class="input-tag">IPv4 · IPv6</span>
+            </label>
+            <button class="scan-button" type="submit" id="submit-scan-btn">
+              <span class="button-label">Inspect IP</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+          </form>
+
+          <div class="form-meta">
+            <p id="input-help">Leave the address blank to inspect your current connection’s public IP.</p>
+            <button class="clear-button" id="clear-input" type="button" hidden>Clear address <span aria-hidden="true">×</span></button>
+          </div>
+
+          <div id="scan-status" class="scan-status" role="status" aria-live="polite" aria-atomic="true"></div>
+
+          <!-- Results Panel -->
+          <section id="results" class="results-panel" aria-labelledby="results-heading" hidden>
+            <div class="results-topline">
+              <div class="eyebrow">NETWORK IDENTITY <span class="eyebrow-divider">/</span> <span id="result-type">REPORT</span></div>
+              <div class="result-actions">
+                <button id="save-scan-btn" class="save-scan-btn" type="button" title="Save this scan to history">★ Save Scan</button>
+                <div class="result-stamp"><span class="stamp-dot"></span><span id="result-state">LOOKUP COMPLETE</span></div>
+              </div>
+            </div>
+
+            <div class="results-head">
+              <div class="result-ip-block">
+                <p class="mini-label">TARGET ADDRESS</p>
+                <h3 id="results-heading" class="result-ip">—</h3>
+                <p id="result-location" class="result-location">—</p>
+              </div>
+              <a id="map-link" class="map-link" href="#" target="_blank" rel="noopener noreferrer" hidden>
+                <span class="map-glyph" aria-hidden="true">⌖</span>
+                <span>Open in Google Maps</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <!-- Distance Estimator -->
+            <section id="distance-panel" class="distance-panel" aria-labelledby="distance-heading" hidden>
+              <div class="distance-copy">
+                <p class="mini-label">OPT-IN DISTANCE ESTIMATE</p>
+                <h4 id="distance-heading">Measure straight-line distance to this host</h4>
+                <p class="distance-note">Coordinates are approximate. Browser location is requested only after you click.</p>
+              </div>
+              <div class="distance-controls">
+                <p id="distance-value" class="distance-value">—</p>
+                <div class="distance-actions">
+                  <button id="measure-distance" class="distance-button" type="button">Measure from my location</button>
+                  <a id="route-link" class="route-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Open route in Maps <span aria-hidden="true">↗</span></a>
+                </div>
+                <p id="distance-status" class="distance-status" role="status" aria-live="polite">Your location stays local in your browser.</p>
+              </div>
+            </section>
+
+            <!-- Result Cards Grid -->
+            <div class="result-grid">
+              <div class="result-main">
+                <!-- Location Card -->
+                <div class="result-card location-card">
+                  <div class="card-kicker"><span class="card-marker marker-lime"></span> GEOGRAPHIC RESOLUTION <span class="card-code">GEO-01</span></div>
+                  <div class="location-place" id="location-place">Not available</div>
+                  <div class="detail-list">
+                    <div class="detail-row privacy-field" data-private="postal"><span>ZIP / POSTAL</span><strong id="result-postal">Not available</strong></div>
+                    <div class="detail-row"><span>TIME ZONE</span><strong id="result-timezone">Not available</strong></div>
+                    <div class="detail-row"><span>COORDINATES</span><strong id="result-coordinates">Not available</strong></div>
+                  </div>
+                </div>
+
+                <!-- Network Route Card -->
+                <div class="result-card network-card">
+                  <div class="card-kicker"><span class="card-marker marker-coral"></span> NETWORK INFRASTRUCTURE <span class="card-code">NET-02</span></div>
+                  <div class="detail-list detail-list-spacious">
+                    <div class="detail-row"><span>INTERNET PROVIDER (ISP)</span><strong id="result-isp">Not available</strong></div>
+                    <div class="detail-row privacy-field" data-private="organization"><span>ORGANIZATION</span><strong id="result-organization">Not available</strong></div>
+                    <div class="detail-row"><span>AUTONOMOUS SYSTEM</span><strong id="result-asn">Not available</strong></div>
+                    <div class="detail-row"><span>CONNECTION TYPE</span><strong id="result-connection-type">Not available</strong></div>
+                    <div class="detail-row"><span>IP PROTOCOL</span><strong id="result-address-type">Not available</strong></div>
+                    <div class="detail-row"><span>DEVICE PROFILE</span><strong id="result-device-profile">Not available</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Security Assessment Card -->
+              <aside class="result-card security-card" aria-labelledby="security-title">
+                <div class="card-kicker"><span class="card-marker marker-violet"></span> THREAT SIGNALS <span class="card-code">SEC-03</span></div>
+                <div class="security-summary" id="security-summary">
+                  <span class="security-icon" aria-hidden="true">⌁</span>
+                  <div>
+                    <h4 id="security-title">No Flags Detected</h4>
+                    <p id="security-caption">Based on live carrier and hosting indicators.</p>
+                  </div>
+                </div>
+                <div class="security-list">
+                  <div class="security-row" id="signal-proxy"><span class="signal-name"><i></i> Proxy / VPN / Anonymizer</span><strong>Unknown</strong></div>
+                  <div class="security-row" id="signal-hosting"><span class="signal-name"><i></i> Data Center / Cloud Host</span><strong>Unknown</strong></div>
+                  <div class="security-row" id="signal-mobile"><span class="signal-name"><i></i> Mobile Carrier Cell</span><strong>Unknown</strong></div>
+                </div>
+                <p class="security-footnote">Network flags provide risk indicators and are not a legal guarantee of identity.</p>
+              </aside>
+            </div>
+
+            <div class="result-footer">
+              <span>END OF REPORT — ipVision ZERO-LOG SCAN</span>
+              <button id="new-scan" type="button">New Scan <span aria-hidden="true">↗</span></button>
+            </div>
+          </section>
+        </section>
+
+        <!-- Upgraded Telemetry Badges Section (Replaced 412 & 459 Tiles) -->
+        <section id="telemetry" class="telemetry-section" aria-labelledby="telemetry-title">
+          <div class="telemetry-header">
+            <div class="eyebrow">DIAGNOSTIC TILES <span class="eyebrow-divider">/</span> SYSTEM TELEMETRY</div>
+            <h2 id="telemetry-title">Active Network Signals</h2>
+          </div>
+          <div class="telemetry-grid">
+            <article class="telemetry-tile tile-routing">
+              <div class="tile-header">
+                <span class="tile-tag">SIGNAL ROUTING</span>
+                <span class="tile-status-dot"></span>
+              </div>
+              <h3 class="tile-title">BGP Autonomous Routing</h3>
+              <p class="tile-desc">Inspect multi-homed carrier networks, upstream transit providers, and ASN peering paths for latency and reliability diagnostics.</p>
+              <div class="tile-metric"><span>PROTOCOL</span><strong>BGP-4 / IPv4 / IPv6</strong></div>
+            </article>
+
+            <article class="telemetry-tile tile-threat">
+              <div class="tile-header">
+                <span class="tile-tag">THREAT PROBING</span>
+                <span class="tile-status-dot alert"></span>
+              </div>
+              <h3 class="tile-title">Proxy &amp; Anonymizer Shield</h3>
+              <p class="tile-desc">Evaluates commercial VPN egress points, Tor exit relays, bulletproof datacenters, and residential proxy networks.</p>
+              <div class="tile-metric"><span>DETECTION</span><strong>Real-Time Threat Score</strong></div>
+            </article>
+
+            <article class="telemetry-tile tile-privacy">
+              <div class="tile-header">
+                <span class="tile-tag">CLEAN VIEW</span>
+                <span class="tile-status-dot active"></span>
+              </div>
+              <h3 class="tile-title">Zero-Exposure Privacy</h3>
+              <p class="tile-desc">Clean View masks sensitive postal and corporate organization strings by default, preventing accidental shoulder-surfing leaks.</p>
+              <div class="tile-metric"><span>ENCRYPTION</span><strong>Client-Side Masking</strong></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Protocol / How It Works Section -->
+        <section id="how-it-works" class="protocol-section" aria-labelledby="protocol-title">
+          <div class="protocol-title-wrap">
+            <div class="eyebrow">SECURITY ARCHITECTURE</div>
+            <h2 id="protocol-title">Zero Friction.<br /><em>High Integrity.</em></h2>
+          </div>
+          <div class="protocol-copy">
+            <div class="protocol-item">
+              <span class="protocol-number">01</span>
+              <div>
+                <h3>Single-Session Security</h3>
+                <p>Every account enforces one active session at a time. If an account logs in from another terminal, older sessions are immediately superseded.</p>
+              </div>
+            </div>
+            <div class="protocol-item">
+              <span class="protocol-number">02</span>
+              <div>
+                <h3>Clean View Privacy</h3>
+                <p>Postal codes and corporate organization flags stay hidden until you intentionally toggle them on.</p>
+              </div>
+            </div>
+            <div class="protocol-item">
+              <span class="protocol-number">03</span>
+              <div>
+                <h3>Row Level Security in Supabase</h3>
+                <p>Scan records are stored in PostgreSQL with Row Level Security (RLS) enabled. Each user can only view their own scan history.</p>
+              </div>
+            </div>
+            <div class="protocol-item">
+              <span class="protocol-number">04</span>
+              <div>
+                <h3>Opt-In Geolocation</h3>
+                <p>Browser GPS coordinates are never polled automatically. Distance estimates run client-side on-demand.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step 11: Modernized Feedback Section -->
+        <section id="feedback" class="feedback-section" aria-labelledby="feedback-title">
+          <div class="feedback-container">
+            <div class="feedback-intro">
+              <div class="feedback-badge"><span class="badge-dot"></span> DIRECT FEEDBACK</div>
+              <h2 id="feedback-title">Help us improve ipVision.</h2>
+              <p>Have an idea for a feature, spotted a misclassified IP, or want to share your thoughts? Your feedback goes straight to our engineering team.</p>
+            </div>
+
+            <form id="feedback-form" class="feedback-card" novalidate>
+              <!-- Sentiment Picker -->
+              <div class="sentiment-group">
+                <span class="form-label">How is your experience?</span>
+                <div class="sentiment-options" role="radiogroup" aria-label="Satisfaction Rating">
+                  <label class="sentiment-pill">
+                    <input type="radio" name="sentiment" value="great" checked />
+                    <span>😍 Great</span>
+                  </label>
+                  <label class="sentiment-pill">
+                    <input type="radio" name="sentiment" value="good" />
+                    <span>👍 Good</span>
+                  </label>
+                  <label class="sentiment-pill">
+                    <input type="radio" name="sentiment" value="okay" />
+                    <span>😐 Okay</span>
+                  </label>
+                  <label class="sentiment-pill">
+                    <input type="radio" name="sentiment" value="bad" />
+                    <span>👎 Needs Work</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Category Picker -->
+              <div class="category-group">
+                <span class="form-label">Category</span>
+                <div class="category-pills">
+                  <button type="button" class="category-pill is-active" data-cat="General">General</button>
+                  <button type="button" class="category-pill" data-cat="Feature Request">Feature Request</button>
+                  <button type="button" class="category-pill" data-cat="IP Accuracy">IP Accuracy</button>
+                  <button type="button" class="category-pill" data-cat="Bug Report">Bug Report</button>
+                </div>
+              </div>
+
+              <!-- Message Input -->
+              <div class="feedback-input-wrap">
+                <label for="feedback-message" class="form-label">Your Message</label>
+                <textarea id="feedback-message" name="message" rows="4" minlength="3" maxlength="1000" placeholder="What worked well, or what could be better?..." required></textarea>
+                <div class="textarea-meta">
+                  <span id="char-count">0 / 1000</span>
+                </div>
+              </div>
+
+              <!-- Reply Email -->
+              <div class="feedback-row">
+                <div class="feedback-field">
+                  <label for="feedback-email" class="form-label">Reply Email <em>(optional)</em></label>
+                  <input id="feedback-email" name="reply_email" type="email" placeholder="you@company.com" autocomplete="email" />
+                </div>
+                <button id="feedback-submit-btn" class="feedback-submit-btn" type="submit">
+                  <span>Send Feedback</span>
+                  <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+
+              <div id="feedback-toast" class="feedback-toast" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-left">
+          <a class="footer-brand" href="/">ip<span>Vision</span></a>
+          <span class="footer-tagline">NETWORK INTELLIGENCE, WITHOUT THE STATIC.</span>
+        </div>
+        <div class="footer-links">
+          <a href="#scanner">Scanner</a>
+          <a href="#telemetry">Telemetry</a>
+          <a href="#feedback">Feedback</a>
+          <a href="#main">Top ↑</a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Auth Modal (Sign In / Sign Up) -->
+    <div id="auth-modal" class="modal-backdrop" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <span class="modal-dot"></span>
+            <h3 id="auth-modal-title">Access ipVision</h3>
+          </div>
+          <button id="auth-close-btn" class="modal-close-btn" type="button" aria-label="Close modal">×</button>
+        </div>
+
+        <div class="auth-tabs" role="tablist">
+          <button id="tab-login" class="auth-tab is-active" type="button" role="tab" aria-selected="true">Sign In</button>
+          <button id="tab-signup" class="auth-tab" type="button" role="tab" aria-selected="false">Create Account</button>
+        </div>
+
+        <form id="auth-form" class="auth-form" novalidate>
+          <div class="auth-field">
+            <label for="auth-email">Email Address</label>
+            <input id="auth-email" type="email" autocomplete="email" placeholder="name@domain.com" required />
+          </div>
+
+          <div class="auth-field">
+            <label for="auth-password">Password</label>
+            <input id="auth-password" type="password" autocomplete="current-password" placeholder="At least 8 characters" minlength="8" required />
+            <span class="auth-hint">Must contain at least 8 characters.</span>
+          </div>
+
+          <div id="auth-status" class="auth-status" role="alert" aria-live="polite"></div>
+
+          <button id="auth-submit-btn" class="auth-submit-btn" type="submit">
+            <span>Sign In</span>
+          </button>
+
+          <p class="auth-footnote">
+            🔒 <strong>Single Active Session:</strong> Signing in from another device will securely log you out here.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scan History Drawer -->
+    <div id="history-drawer" class="modal-backdrop" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="history-title">
+      <div class="drawer-card">
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <span class="modal-dot"></span>
+            <h3 id="history-title">Saved Scan History</h3>
+          </div>
+          <button id="history-close-btn" class="modal-close-btn" type="button" aria-label="Close history">×</button>
+        </div>
+
+        <div class="history-content">
+          <div class="history-controls">
+            <span id="history-count" class="history-count">0 Scans Recorded</span>
+            <button id="clear-history-btn" class="clear-history-btn" type="button">Clear All</button>
+          </div>
+
+          <div id="history-list" class="history-list">
+            <p class="history-empty">No scans saved yet. Run an IP inspection and click "Save Scan" to preserve the results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

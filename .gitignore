@@ -1,0 +1,50 @@
+# Secrets and Environment Variables
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+credentials.json
+feedback_log.jsonl
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Cache
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Vercel & Deployment
+.vercel
+.vercel/
+
+# OS Specific
+.DS_Store
+Thumbs.db
+desktop.ini

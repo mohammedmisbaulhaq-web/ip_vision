@@ -1,0 +1,4 @@
+# ipVision — Python Dependencies
+# The backend is built to run on Python standard library with optional Supabase client
+requests>=2.31.0
+supabase>=2.0.0
